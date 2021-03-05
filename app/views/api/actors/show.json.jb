@@ -1,5 +1,1 @@
-{
-  first_name: @actor[:first_name],
-  last_name: @actor[:last_name],
-  known_for: @actor[:known_for]
-}
+render partial: "actors.json.jb", locals: { actor: @actor }
