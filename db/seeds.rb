@@ -6,12 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-10.times do
-  actor = Actor.new(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, known_for: Faker::Movie.title)
-  actor.save
-end
+actors = Actor.all
+array = [1,4,10]
 
-10.times do
-  movie = Movie.new(title: Faker::Movie.title, year: Faker::Number.within(range: 1950..2021), plot: Faker::Movie.quote)
-  movie.save
+actors.each do |actor|
+  actor.update(age: rand(20..60))
+  actor.update(movie_id: array.sample)
 end
