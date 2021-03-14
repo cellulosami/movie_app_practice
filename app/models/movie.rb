@@ -7,4 +7,8 @@ class Movie < ApplicationRecord
   validates :year, numericality: { greater_than: 1888 }
   validates :plot, length: { in: 25..255 }
   validates :director, presence: true
+
+  def genre_names
+    genres.map { |genre| genre.name }
+  end
 end
