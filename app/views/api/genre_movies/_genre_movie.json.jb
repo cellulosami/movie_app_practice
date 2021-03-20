@@ -1,0 +1,5 @@
+{
+  id: genre_movie.id,
+  genre_id: genre_movie.genre_id,
+  movie_id: genre_movie.movie_id
+}
